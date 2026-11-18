@@ -32,6 +32,7 @@ public partial class valgusfoor : ContentPage
             ResetToDefault(this, EventArgs.Empty);
             RedLight.Color = Colors.Red;
             await Task.Delay(2000);
+            ResetToDefault(this, EventArgs.Empty);
         }
 
     }
