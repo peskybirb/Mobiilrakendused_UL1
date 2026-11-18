@@ -1,0 +1,77 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="M_LOGITge25.valgusfoor"
+    Title="valgusfoor">
+
+    <VerticalStackLayout Spacing="15"
+                     HorizontalOptions="Center">
+
+        <Label
+    Text="Traffic light"
+    Style="{StaticResource Headline}"
+    TextColor="LightPink"
+    SemanticProperties.HeadingLevel="Level1" />
+        
+        <HorizontalStackLayout Spacing="5"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start">
+            <Button
+                 x:Name="StartBtn"
+                 Text="Start" 
+                 TextColor="White"
+                 SemanticProperties.Hint="Alustab valgusfoori"
+                 Clicked="StartBtn_Clicked"
+                 BackgroundColor="Green"
+                 HorizontalOptions="Fill"
+                 WidthRequest="100"
+                 HeightRequest="50" />
+
+            <Button
+                 x:Name="StopBtn"
+                 Text="Stop"
+                 TextColor="White"
+                 SemanticProperties.Hint="Peatab valgusfoori"
+                 Clicked="StopBtn_Clicked"
+                 BackgroundColor="Red"
+                 HorizontalOptions="Fill" 
+                 WidthRequest="100"
+                 HeightRequest="50" />
+
+            <Button
+                 x:Name="NightBtn"
+                 Text="Night"
+                 TextColor="White"
+                 Clicked="NighBtn_Clicked"
+                 BackgroundColor="DarkBlue"
+                 HorizontalOptions="Fill"
+                 WidthRequest="100"
+                 HeightRequest="50" />
+            
+        </HorizontalStackLayout>
+
+        <BoxView
+      x:Name="GreenLight"
+      Color="Gray"
+      WidthRequest="180"
+      HeightRequest="180"
+      CornerRadius="90" />
+
+        <BoxView
+    x:Name="YellowLight"
+    Color="Gray"
+    WidthRequest="180"
+    HeightRequest="180"
+    CornerRadius="90" />
+
+        <BoxView
+     x:Name="RedLight"
+     Color="Gray"
+     WidthRequest="180"
+     HeightRequest="180"
+     CornerRadius="90" />
+
+
+    </VerticalStackLayout>
+
+</ContentPage>
