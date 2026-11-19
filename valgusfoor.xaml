@@ -58,18 +58,18 @@
       CornerRadius="90" />
 
         <BoxView
-    x:Name="YellowLight"
-    Color="Gray"
-    WidthRequest="180"
-    HeightRequest="180"
-    CornerRadius="90" />
+      x:Name="YellowLight"
+      Color="Gray"
+      WidthRequest="180"
+      HeightRequest="180"
+      CornerRadius="90" />
 
         <BoxView
-     x:Name="RedLight"
-     Color="Gray"
-     WidthRequest="180"
-     HeightRequest="180"
-     CornerRadius="90" />
+      x:Name="RedLight"
+      Color="Gray"
+      WidthRequest="180"
+      HeightRequest="180"
+      CornerRadius="90" />
 
 
     </VerticalStackLayout>

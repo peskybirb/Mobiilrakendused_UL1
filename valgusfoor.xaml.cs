@@ -4,8 +4,9 @@ namespace M_LOGITge25;
 
 public partial class valgusfoor : ContentPage
 {
-    bool NightClicked = false;
-    bool Cycle = false;
+    public bool NightClicked = false;
+    public bool Cycle = false;
+
     public valgusfoor()
 	{
         InitializeComponent();
@@ -15,26 +16,47 @@ public partial class valgusfoor : ContentPage
     {
         Cycle = true;
         NightClicked = false;
-        ResetToDefault(this, EventArgs.Empty);
 
-
-
-        while (Cycle == true) 
+        do
         {
-            ResetToDefault(this, EventArgs.Empty);
-            GreenLight.Color = Colors.Green;
-            await Task.Delay(2000);
+            if (Cycle = true)
+            {
+                ResetToDefault(this, EventArgs.Empty);
+                GreenLight.Color = Colors.Green;
+                await Task.Delay(2000);
+                ResetToDefault(this, EventArgs.Empty);
+            }
+            else
+            {
+                Cycle = false;
+            }
 
-            ResetToDefault(this, EventArgs.Empty);
-            YellowLight.Color = Colors.Yellow;
-            await Task.Delay(2000);
+            if (Cycle = true)
+            {
+                ResetToDefault(this, EventArgs.Empty);
+                YellowLight.Color = Colors.Yellow;
+                await Task.Delay(2000);
+                ResetToDefault(this, EventArgs.Empty);
+            }
+            else
+            {
+                Cycle = false;
+            }
 
-            ResetToDefault(this, EventArgs.Empty);
-            RedLight.Color = Colors.Red;
-            await Task.Delay(2000);
-            ResetToDefault(this, EventArgs.Empty);
+            if (Cycle = true)
+            {
+                ResetToDefault(this, EventArgs.Empty);
+                RedLight.Color = Colors.Red;
+                await Task.Delay(2000);
+                ResetToDefault(this, EventArgs.Empty);
+            }
+            else
+            {
+                Cycle = false;
+            }
+
         }
-
+        while (Cycle = true);
     }
 
     /// <summary>
@@ -44,16 +66,14 @@ public partial class valgusfoor : ContentPage
     /// <param name="e">The event data.</param>
     private async void StopBtn_Clicked(object sender, EventArgs e)
     {
-        ResetToDefault(this, EventArgs.Empty);
         Cycle = false;
         NightClicked = false;
-        ResetToDefault(this, EventArgs.Empty);
-        await Task.Delay(2000);
         ResetToDefault(this, EventArgs.Empty);
     }
 
     private async void NighBtn_Clicked(object sender, EventArgs e)
     {
+
         ResetToDefault(this, EventArgs.Empty);
         Cycle = false;
         NightClicked = true;
@@ -70,7 +90,6 @@ public partial class valgusfoor : ContentPage
     }
     public async void ResetToDefault(object sender, EventArgs e) 
     {
-
         GreenLight.Color = Colors.Gray;
         RedLight.Color = Colors.Gray;
         YellowLight.Color = Colors.Gray;
