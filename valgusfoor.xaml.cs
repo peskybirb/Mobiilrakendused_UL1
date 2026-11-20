@@ -17,46 +17,37 @@ public partial class valgusfoor : ContentPage
         Cycle = true;
         NightClicked = false;
 
-        do
+        while (Cycle) 
         {
-            if (Cycle = true)
+            ResetToDefault(this, EventArgs.Empty);
+            GreenLight.Color = Colors.Green;
+            await Task.Delay(2000);
+            ResetToDefault(this, EventArgs.Empty);
+
+            if (!Cycle) 
             {
-                ResetToDefault(this, EventArgs.Empty);
-                GreenLight.Color = Colors.Green;
-                await Task.Delay(2000);
-                ResetToDefault(this, EventArgs.Empty);
-            }
-            else
-            {
-                Cycle = false;
+                break;
             }
 
-            if (Cycle = true)
+            YellowLight.Color = Colors.Yellow;
+            await Task.Delay(2000);
+            ResetToDefault(this, EventArgs.Empty);
+
+            if (!Cycle)
             {
-                ResetToDefault(this, EventArgs.Empty);
-                YellowLight.Color = Colors.Yellow;
-                await Task.Delay(2000);
-                ResetToDefault(this, EventArgs.Empty);
-            }
-            else
-            {
-                Cycle = false;
+                break;
             }
 
-            if (Cycle = true)
+            RedLight.Color = Colors.Red;
+            await Task.Delay(2000);
+            ResetToDefault(this, EventArgs.Empty);
+
+            if (!Cycle)
             {
-                ResetToDefault(this, EventArgs.Empty);
-                RedLight.Color = Colors.Red;
-                await Task.Delay(2000);
-                ResetToDefault(this, EventArgs.Empty);
-            }
-            else
-            {
-                Cycle = false;
+                break;
             }
 
         }
-        while (Cycle = true);
     }
 
     /// <summary>
