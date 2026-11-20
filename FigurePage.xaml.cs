@@ -7,9 +7,9 @@ public partial class FigurePage : ContentPage
 	BoxView boxview;
 	Ellipse pall;
 	Polygon kolmnurk;
-	Random rnd=new Random();
+	Random rnd = new Random();
 	HorizontalStackLayout hsl;
-	List<string> nupud = new List<string>() {"Tagasi","Avaleht","Edasi" };
+	List<string> nupud = new List<string>() { "Tagasi", "Avaleht", "Edasi" };
 	VerticalStackLayout vsl;
 
 
@@ -19,8 +19,8 @@ public partial class FigurePage : ContentPage
 
 		// teeme random 3 inti et saada random rgb värv 
 		int r = rnd.Next(256);
-        int g = rnd.Next(256);
-        int b = rnd.Next(256);
+		int g = rnd.Next(256);
+		int b = rnd.Next(256);
 
 		// teeme uue boxview default suuruste ja seadetega
 		boxview = new BoxView
@@ -29,7 +29,7 @@ public partial class FigurePage : ContentPage
 			WidthRequest = 200,
 			HeightRequest = 200,
 			HorizontalOptions = LayoutOptions.Center,
-			BackgroundColor = Color.FromRgba(0,0,0,0),
+			BackgroundColor = Color.FromRgba(0, 0, 0, 0),
 			CornerRadius = 30
 		};
 
@@ -38,26 +38,26 @@ public partial class FigurePage : ContentPage
 		boxview.GestureRecognizers.Add(tap);
 		tap.Tapped += (sender, e) =>
 		{
-            int r = rnd.Next(256);
-            int g = rnd.Next(256);
-            int b = rnd.Next(256);
-			boxview.Color = Color.FromRgb(r,g,b);
+			int r = rnd.Next(256);
+			int g = rnd.Next(256);
+			int b = rnd.Next(256);
+			boxview.Color = Color.FromRgb(r, g, b);
 			boxview.WidthRequest = boxview.Width + 20; //suurendame laiust defaultist
 			boxview.HeightRequest = boxview.Height + 20; // suurendame kõrgust defaultist
 
 			//Kui ekraan on väiksem kui meie boxview siis teeb ta selle suurusel 200 x 200
-			if (boxview.WidthRequest > (int)DeviceDisplay.MainDisplayInfo.Width / 3) 
+			if (boxview.WidthRequest > (int)DeviceDisplay.MainDisplayInfo.Width / 3)
 			{
 				boxview.WidthRequest = 200;
 				boxview.HeightRequest = 200;
 			}
-        };
+		};
 
 		pall = new Ellipse
 		{
 			WidthRequest = 200,
 			HeightRequest = 200,
-			Fill = new SolidColorBrush(Color.FromRgb(b , g , r)),
+			Fill = new SolidColorBrush(Color.FromRgb(b, g, r)),
 			Stroke = Colors.LightPink,
 			StrokeThickness = 5,
 			HorizontalOptions = LayoutOptions.Center,
@@ -72,7 +72,7 @@ public partial class FigurePage : ContentPage
 				new Point(100,0),
 				new Point(200,200)
 			},
-			Fill = new SolidColorBrush(Color.FromRgb(g,b,r)),
+			Fill = new SolidColorBrush(Color.FromRgb(g, b, r)),
 			Stroke = Colors.Aquamarine,
 			StrokeThickness = 5,
 			HorizontalOptions = LayoutOptions.Center,
@@ -85,16 +85,17 @@ public partial class FigurePage : ContentPage
 		{
 			//iga kord kui 2 korda tappida siis kaob kolnurk vaikselt ja ka muudab tausta värvi
 			kolmnurk.Opacity -= 0.1;
-            int r = rnd.Next(256);
-            int g = rnd.Next(256);
-            int b = rnd.Next(256);
-			kolmnurk.BackgroundColor = Color.FromRgb(b,r,g);
-        };
+			int r = rnd.Next(256);
+			int g = rnd.Next(256);
+			int b = rnd.Next(256);
+			kolmnurk.BackgroundColor = Color.FromRgb(b, r, g);
+		};
 		hsl = new HorizontalStackLayout
 		{
-			Spacing = 20, HorizontalOptions = LayoutOptions.Center
+			Spacing = 20,
+			HorizontalOptions = LayoutOptions.Center
 		};
-		for(int j = 0; j < nupud.Count;j++) 
+		for (int j = 0; j < nupud.Count; j++)
 		{
 			Button nupp = new Button
 			{
@@ -114,27 +115,27 @@ public partial class FigurePage : ContentPage
 		{
 			Padding = 20,
 			Spacing = 15,
-			Children = {boxview, pall, kolmnurk, hsl },
+			Children = { boxview, pall, kolmnurk, hsl },
 			HorizontalOptions = LayoutOptions.Center
 		};
 		Content = vsl;
-    }
-    private void Liikumine(object? sender, EventArgs e)
-    {
-        Button nupp = sender as Button;
-        if (nupp.ZIndex == 0)
-        {
-            Navigation.PushAsync(new TextPage());
-        }
-        else if (nupp.ZIndex == 1)
-        {
-            Navigation.PopToRootAsync();
+	}
+	private void Liikumine(object? sender, EventArgs e)
+	{
+		Button nupp = sender as Button;
+		if (nupp.ZIndex == 0)
+		{
+			Navigation.PushAsync(new TextPage());
+		}
+		else if (nupp.ZIndex == 1)
+		{
+			Navigation.PopToRootAsync();
 			kolmnurk.Opacity = 100;
-        }
-        else if (nupp.ZIndex == 2)
-        {
-            Navigation.PushAsync(new FigurePage()); //siia lisame uue lehe, et saaks edasi liikuda
-        }
-    }
+		}
+		else if (nupp.ZIndex == 2)
+		{
+			Navigation.PushAsync(new FigurePage()); //siia lisame uue lehe, et saaks edasi liikuda
+		}
+	}
 
 }

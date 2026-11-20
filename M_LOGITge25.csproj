@@ -40,10 +40,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\pilt.svg"
-				  ForegroundFile="Resources\AppIcon\pilt.svg"
-				  Color="#FFFFFF"
-				  ForegroundScale="0.65" />
+		<MauiIcon Include="Resources\AppIcon\pilt.svg" ForegroundFile="Resources\AppIcon\pilt.svg" Color="#FFFFFF" ForegroundScale="0.65" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -67,6 +64,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="FigurePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LumeMemm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="StartPage.xaml">

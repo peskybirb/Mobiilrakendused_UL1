@@ -64,7 +64,6 @@ public partial class valgusfoor : ContentPage
 
     private async void NighBtn_Clicked(object sender, EventArgs e)
     {
-
         ResetToDefault(this, EventArgs.Empty);
         Cycle = false;
         NightClicked = true;
@@ -75,9 +74,7 @@ public partial class valgusfoor : ContentPage
 
             YellowLight.Color = Colors.Gray;
             await Task.Delay(2000);
-        }
-        
-        
+        } 
     }
     public async void ResetToDefault(object sender, EventArgs e) 
     {
@@ -85,4 +82,5 @@ public partial class valgusfoor : ContentPage
         RedLight.Color = Colors.Gray;
         YellowLight.Color = Colors.Gray;
     }
+
 }
