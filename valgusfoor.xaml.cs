@@ -14,8 +14,8 @@ public partial class valgusfoor : ContentPage
 
     private async void StartBtn_Clicked(object sender, EventArgs e)
     {
+        StopBtn_Clicked(sender , e);
         Cycle = true;
-        NightClicked = false;
 
         while (Cycle) 
         {
